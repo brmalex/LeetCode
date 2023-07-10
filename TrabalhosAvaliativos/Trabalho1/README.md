@@ -7,9 +7,9 @@ A completing word is a word that contains all the letters in licensePlate. Ignor
 For example, if licensePlate = "aBc 12c", then it contains letters 'a', 'b' (ignoring case), and 'c' twice. Possible completing words are "abccdef", "caaacab", and "cbca".
 Return the shortest completing word in words. It is guaranteed an answer exists. If there are multiple shortest completing words, return the first one that occurs in words.
 
-Testei 3 casos:
-licensePlate = "1s3 PSt", words = \["step","steps","stripe","stepple"]
-licensePlate = "1s3 456", words = \["looks","pest","stew","show"]
+Testei 3 casos: <br>
+licensePlate = "1s3 PSt", words = \["step","steps","stripe","stepple"] <br>
+licensePlate = "1s3 456", words = \["looks","pest","stew","show"] <br>
 licensePlate = "Ah71752", words = \["suggest","letter","of","husband","easy","education","drug","prevent","writer","old"]
 
 Todos eles funcionaram.
