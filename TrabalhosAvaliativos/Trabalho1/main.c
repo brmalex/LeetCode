@@ -7,7 +7,7 @@
 ====================
 Compare
     Compara a string "word" de tamanho "lenWord" com a string "licensePlate" de tamanho "lenPlate".
-    Retorna 0 se a string "word" não tiver todas as letras de "licensePlate", ou o tamanho de "word" se tiver todas as letras, ignorando se são maiúsculas ou minúsculas, números e espaços.
+    Retorna 0 se a string "word" não tiver todos os caractéres de "licensePlate", ou o tamanho de "word" se tiver todos os caractéres.
 ====================
 */
 int Compare( char * licensePlate, char * word, int lenPlate, int lenWord );
@@ -27,27 +27,6 @@ int main( int argc, char const *argv[] ) {
     char * words[] = { "suggest", "letter", "of", "husband", "easy", "education", "drug", "prevent", "writer", "old"};
     printf ( "%s", ShortestCompletingWord( licensePlate, words, wordsSize ) );
     return 0;
-}
-
-int Compare( char * licensePlate, char * word, int lenPlate, int lenWord ) {
-    int test = 0;
-    char * temp = ( char * ) malloc ( sizeof ( char ) * ( lenWord+1 ) );
-    strcpy ( temp, word );
-    for ( int i = 0; i < lenPlate; i++ ) {
-        for ( int j = 0; j < lenWord; j ++ ) {
-            if ( licensePlate[i] == temp[j] ) {
-                temp[ j ] = ' ';
-                test ++;
-                j = lenWord;
-            }
-        }
-        if ( i + 1 != test ) {
-            free( temp );
-            return 0;
-        } 
-    }
-    free( temp );
-    return lenWord;
 }
 
 char * ShortestCompletingWord( char * licensePlate, char ** words, int wordsSize ) {
@@ -84,4 +63,26 @@ char * ShortestCompletingWord( char * licensePlate, char ** words, int wordsSize
     }
     free ( cleanLicense );
     return retorno;
+}
+
+
+int Compare( char * licensePlate, char * word, int lenPlate, int lenWord ) {
+    int test = 0;
+    char * temp = ( char * ) malloc ( sizeof ( char ) * ( lenWord+1 ) );
+    strcpy ( temp, word );
+    for ( int i = 0; i < lenPlate; i++ ) {
+        for ( int j = 0; j < lenWord; j ++ ) {
+            if ( licensePlate[i] == temp[j] ) {
+                temp[ j ] = ' ';
+                test ++;
+                j = lenWord;
+            }
+        }
+        if ( i + 1 != test ) {
+            free( temp );
+            return 0;
+        } 
+    }
+    free( temp );
+    return lenWord;
 }
