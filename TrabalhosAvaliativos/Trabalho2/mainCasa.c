@@ -3,12 +3,11 @@
 /*
 ====================
 fillCups
-    Tem três dispensas com conteúdos diferentes, e precisa preencher um total de "amount[0]", "amount[1]" e "amount[2]" de copos,
+    Tem três dispensas com 3 conteúdos diferentes, e precisa preencher um total de "amount[0]", "amount[1]" e "amount[2]" de copos,
     sendo cada "amount[]" quantos copos com aquele conteúdo devem ser preenchidos.
     Retorna quantos segundos demora para preencher os copos, podendo utilizar até 2 dispensas diferentes por segundo.
 ====================
 */
-
 int fillCups ( int * amount, int amountSize ) {
     int r = 0;
     if ( ( amount[0] ) > ( amount[1] + amount[2] ) ) {
