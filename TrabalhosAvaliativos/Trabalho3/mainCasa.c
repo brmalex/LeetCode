@@ -7,8 +7,26 @@ struct TreeNode {
     struct TreeNode * right;
 };
 
+/*
+====================
+findSecondMinimumValue
+    Retorna o segundo menor valor da árvore dada na tarefa
+====================
+*/
 int findSecondMinimumValue( struct TreeNode * root);
+/*
+====================
+findSmallestValue
+    Função auxiliar da anterior, os realizados nessa são diferentes.
+====================
+*/
 int findSmallestValue( struct TreeNode * root, int smallest );
+/*
+====================
+criarNodo
+    Cria um nodo da árvore
+====================
+*/
 struct TreeNode * criarNodo( int val );
 
 int main(){
