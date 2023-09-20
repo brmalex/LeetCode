@@ -20,8 +20,13 @@ void inorder(struct TreeNode* root, int * ret, int *i){
 }
 
 int* inorderTraversal(struct TreeNode* root, int* returnSize){
-    '*returnSize = 0;
-    int * ret = (int*)malloc(sizeof(int)*101);
-    inorder(root, ret, returnSize);
-    return ret;'
+    *returnSize = 0;
+    int * temp = (int*)malloc(sizeof(int)*101);
+    inorder(root, temp, returnSize);
+    int * ret = (int*)malloc(sizeof(int)*(*returnSize));
+    for(int i = 0; i < *returnSize; i++){
+        ret[i] = temp[i];
+    }
+    free(temp);
+    return ret;
 }
